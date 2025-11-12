@@ -1,10 +1,14 @@
 package exercises.fibonacchi;
 
 public class IterativeFibonacci implements FibonacciStrategy {
-
-    @Override
-    public long compute(int n) {
-        //TODO implement using iterative approach
+    public  long compute(int n) {
+        int a = 0, b = 1;
+        for (int i = 2; i <= n; i++) {
+            int next = a + b;
+            a = b;
+            b = next;
+        }
+        return (n == 0) ? a : b;
     }
 
 
